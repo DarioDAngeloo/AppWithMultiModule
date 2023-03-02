@@ -14,8 +14,12 @@ import androidx.navigation.compose.rememberNavController
 import com.study.appwithmultimodule.ui.theme.AppWithMultiModuleTheme
 import com.study.appwithmultimodule.util.navigate
 import com.study.core.navigation.Route
+import com.study.onboarding_presentation.activity.ActivityLevelScreen
 import com.study.onboarding_presentation.age.AgeScreen
 import com.study.onboarding_presentation.gender.GenderScreen
+import com.study.onboarding_presentation.goal.GoalTypeScreen
+import com.study.onboarding_presentation.height.HeightScreen
+import com.study.onboarding_presentation.weight.WeightScreen
 import com.study.onboarding_presentation.welcome.WelcomeScreen
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -46,19 +50,19 @@ class MainActivity : ComponentActivity() {
                          AgeScreen(scaffoldState = scaffoldState ,onNavigate = navController::navigate)
                         }
                         composable(Route.HEIGHT) {
-
+                            HeightScreen(scaffoldState = scaffoldState, onNavigate = navController::navigate )
                         }
                         composable(Route.WEIGHT) {
-
+                            WeightScreen(scaffoldState = scaffoldState, onNavigate = navController::navigate )
                         }
                         composable(Route.NUTRIENT_GOAL) {
 
                         }
                         composable(Route.ACTIVITY) {
-
+                            ActivityLevelScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.GOAL) {
-
+                            GoalTypeScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.TRACKER_OVERVIEW) {
 
