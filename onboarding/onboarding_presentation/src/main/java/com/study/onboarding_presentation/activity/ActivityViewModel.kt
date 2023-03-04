@@ -6,7 +6,6 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.study.core.domain.model.ActivityLevel
-import com.study.core.domain.model.Gender
 import com.study.core.domain.preferences.Preferences
 import com.study.core.navigation.Route
 import com.study.core.util.UiEvent
@@ -35,7 +34,7 @@ class ActivityViewModel @Inject constructor(
     fun onNextClick(){
         viewModelScope.launch {
             preferences.saveActivityLevel(selectedActivity)
-            _uiEvent.send(UiEvent.Navigate(Route.GOAL))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 

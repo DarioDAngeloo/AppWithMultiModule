@@ -40,19 +40,6 @@ class TrackerOverViewViewModel @Inject constructor(
 
     fun onEvent(event: TrackerOverViewEvent) {
         when (event) {
-            is TrackerOverViewEvent.OnAddFoodClick -> {
-                viewModelScope.launch {
-                    _uiEvent.send(
-                        UiEvent.Navigate(
-                            router = Route.SEARCH
-                                    + "/${event.meal.mealType.name}"
-                                    + "/${state.date.dayOfMonth}"
-                                    + "/${state.date.monthValue}"
-                                    + "/${state.date.year}"
-                        )
-                    )
-                }
-            }
             is TrackerOverViewEvent.OnNextDayClick -> {
                 state = state.copy(
                     date = state.date.plusDays(1)

@@ -15,14 +15,13 @@ import com.study.core.util.UiEvent
 import com.study.core_ui.LocalSpacing
 import com.study.core.R
 import com.study.core.domain.model.ActivityLevel
-import com.study.core.domain.model.Gender
 import com.study.onboarding_presentation.component.ActionButton
 import com.study.onboarding_presentation.component.SelectableButton
 import kotlinx.coroutines.flow.collect
 
 @Composable
 fun ActivityLevelScreen(
-    onNavigate: (UiEvent.Navigate) -> Unit,
+    onNextClick: () -> Unit,
     activityLevelViewModel: ActivityViewModel = hiltViewModel(),
 ) {
     val spacing = LocalSpacing.current
@@ -30,7 +29,7 @@ fun ActivityLevelScreen(
     LaunchedEffect(key1 = true) {
         activityLevelViewModel.uiEvent.collect { event ->
             when (event) {
-                is UiEvent.Navigate -> onNavigate(event)
+                is UiEvent.Success -> onNextClick()
                 else -> Unit
             }
         }

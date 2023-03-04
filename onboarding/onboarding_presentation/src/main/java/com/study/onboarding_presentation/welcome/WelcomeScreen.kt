@@ -16,7 +16,7 @@ import com.study.onboarding_presentation.component.ActionButton
 
 @Composable
 fun WelcomeScreen(
-    onNavigate: (UiEvent.Navigate) -> Unit,
+    onNextClick: () -> Unit,
 ) {
     val space = LocalSpacing.current
 
@@ -33,7 +33,7 @@ fun WelcomeScreen(
         Spacer(modifier = Modifier.height(space.spaceMedium))
         ActionButton(
             stringResource(id = R.string.next),
-            onClick = { onNavigate(UiEvent.Navigate(Route.GENDER)) },
+            onClick = { onNextClick() },
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
     }
