@@ -16,6 +16,7 @@ import androidx.navigation.navArgument
 import coil.annotation.ExperimentalCoilApi
 import com.study.appwithmultimodule.ui.theme.AppWithMultiModuleTheme
 import com.study.appwithmultimodule.util.navigate
+import com.study.core.domain.preferences.Preferences
 import com.study.core.navigation.Route
 import com.study.onboarding_presentation.activity.ActivityLevelScreen
 import com.study.onboarding_presentation.age.AgeScreen
@@ -28,12 +29,19 @@ import com.study.onboarding_presentation.welcome.WelcomeScreen
 import com.study.tracker_presentation.search.SearchScreen
 import com.study.tracker_presentation.tracker_overview.TrackerOverviewScreen
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @OptIn(ExperimentalCoilApi::class)
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var preferences: Preferences
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val shouldShowOnBoarding = preferences.loadShouldShowOnBoarding()
         setContent {
             AppWithMultiModuleTheme {
                 val navController = rememberNavController()
@@ -45,7 +53,9 @@ class MainActivity : ComponentActivity() {
                 ) {
                     NavHost(
                         navController = navController,
-                        startDestination = Route.WELCOME
+                        startDestination = if (shouldShowOnBoarding) {
+                            Route.WELCOME
+                        } else Route.TRACKER_OVERVIEW
                     ) {
                         composable(Route.WELCOME) {
                             WelcomeScreen(onNavigate = navController::navigate)
