@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.study.core.domain.preferences.Preferences
 import com.study.core.domain.use_case.FilterOutDigitsUseCase
-import com.study.core.navigation.Route
 import com.study.core.util.UiEvent
 import com.study.onboarding_domain.use_case.ValidateNutrientsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

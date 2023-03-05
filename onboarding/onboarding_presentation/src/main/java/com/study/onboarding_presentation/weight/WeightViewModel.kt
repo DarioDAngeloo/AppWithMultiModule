@@ -9,7 +9,6 @@ import com.study.core.domain.preferences.Preferences
 import com.study.core.util.UiEvent
 import com.study.core.util.UiText
 import com.study.core.R
-import com.study.core.navigation.Route
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow

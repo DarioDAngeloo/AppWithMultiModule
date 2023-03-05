@@ -9,8 +9,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import com.study.core.R
-import com.study.core.navigation.Route
-import com.study.core.util.UiEvent
 import com.study.core_ui.LocalSpacing
 import com.study.onboarding_presentation.component.ActionButton
 

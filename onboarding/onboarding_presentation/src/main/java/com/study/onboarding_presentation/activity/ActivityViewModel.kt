@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.study.core.domain.model.ActivityLevel
 import com.study.core.domain.preferences.Preferences
-import com.study.core.navigation.Route
 import com.study.core.util.UiEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
