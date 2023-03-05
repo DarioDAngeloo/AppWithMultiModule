@@ -6,7 +6,6 @@ plugins {
 }
 
 android {
-    namespace = "com.study.appwithmultimodule"
     compileSdk = ProjectConfig.compileSdk
 
     defaultConfig {
@@ -16,7 +15,7 @@ android {
         versionCode = ProjectConfig.versionCode
         versionName = ProjectConfig.versionName
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.study.appwithmultimodule.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
